@@ -1,2 +1,21 @@
 # php_save_sensors_data_to_csv
-Sensors send GET data (JSON format) to PHP web server. Then PHP saved those to CSV files.
+Sensors send GET data (JSON format) to PHP web server. Then PHP saved those to csv files.
+เซนเซอร์ส่งค่ามาที่ PHP web server เพื่อเก็บเป็นไฟล์ csv
+
+- เซนเซอร์ส่งข้อมูลมาที่ PHP web server ผ่านทาง Wi-Fi
+- PHP อ่านค่าแล้วบันทึกลงไฟล์ csv
+- ไฟล์ csv จะถูกเก็บในโฟลเดอร์ตามชื่อเซนเซอร์, ชื่อเซนเซอร์ต้องไม่ซ้ำกัน สามารถเปลี่ยนได้ในโค้ดผั่งเซนเซอร์
+- ไฟล์ csv จะถูกแยกเก็บเป็นรายวัน ตามเวลาประเทศไทย (สามารถเปลี่ยนเวลาท้องถิ่นได้)
+- รองรับเซนเซอร์ไม่จำกัดจำนวน ไม่จำกัดค่า 
+- ไฟล์ PHP มีแค่ไฟล์เดียว ขนาดเล็กมาก
+- โพลเดอร์ของเซนเซอร์จะถูกสร้างอัตโนมัติ
+- โค้ดมี 2 ฝั่ง คือ เซนเซอร์ และ PHP web server
+- โค้ดฝั่งเซนเซอร์จะต่อ OLED ไว้ ถ้าไม่ใช้ก็ลบออกได้
+- โฟลเดอร์ csv นั้นมีข้อมูลตัวอย่างอยู่ สามารถลบได้
+- รองรับ DNS โดยใช้ชื่อของเซนเซอร์ 
+- เซนเซอร์เป็นแบบ active mode คือส่งค่าขึ้นไปยัง PHP web server ทางเดียว, ไม่รองรับการอ่านค่าจาก PHP web server
+
+อุปกรณ์ที่ใช้
+- Wemos D1 Mini Pro
+- I2C OLED
+- SHT30 Wemos mini shield
